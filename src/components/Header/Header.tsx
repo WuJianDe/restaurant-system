@@ -20,33 +20,43 @@ const Header: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const goToLogin = () => {
     navigate("/login");
   };
 
-  const handleLogout = () => {
+  const logout = () => {
     setIsLoggedIn(false);
-    console.log("User logged out");
+    navigate(`/`);
   };
-
+  const goToProfile = (path: string) => {
+    navigate(`/user/${path}`);
+  };
+  const goToHome = () => {
+    navigate(`/`);
+  };
   return (
     <header className={styles["top-bar"]}>
-      <div className={styles["top-bar-left"]}>Vic Eats</div>
+      <div onClick={() => goToHome()} className={styles["top-bar-left"]}>
+        Vic Eats
+      </div>
       <div className={styles["top-bar-right"]}>
         {isLoggedIn ? (
           <div className={styles["user-profile"]} onClick={toggleShow}>
             <span className={styles["user-name"]}>{userName}</span>
             {isShow.dropdown && (
               <div className={styles["dropdown-menu"]}>
-                <div>個人資訊</div>
-                <div>訂單</div>
-                <div onClick={handleLogout}>登出</div>
+                <div onClick={() => goToProfile("profile")}>個人資訊</div>
+                <div onClick={() => goToProfile("order-record")}>訂單</div>
+                <div onClick={() => logout()}>登出</div>
               </div>
             )}
             <i className="fas fa-user-circle"></i>
           </div>
         ) : (
-          <button onClick={handleLogin} className={styles["login-button"]}>
+          <button
+            onClick={() => goToLogin()}
+            className={styles["login-button"]}
+          >
             登入
           </button>
         )}

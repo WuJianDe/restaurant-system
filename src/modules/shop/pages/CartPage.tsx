@@ -1,5 +1,6 @@
 import styles from "../styles/shop.module.scss";
 import { Product } from "../../../types/types";
+import { useNavigate } from "react-router-dom";
 interface CartProps {
   cartItems: Product[];
   isShowCart: boolean;
@@ -10,6 +11,10 @@ const CartPage: React.FC<CartProps> = ({
   isShowCart,
   closeCart,
 }) => {
+  const navigate = useNavigate();
+  const goToCheckoutPage = () => {
+    navigate("/checkout");
+  }
   return (
     <div
       className={`${styles["cart-sidebar"]} ${isShowCart && styles["open"]}`}
@@ -39,7 +44,7 @@ const CartPage: React.FC<CartProps> = ({
         ))}
       </div>
       <div className={styles["cart-sidebar-footer"]}>
-        <button onClick={() => alert("結帳功能尚未實現！")}>結帳</button>
+        <button onClick={() => goToCheckoutPage()}>結帳</button>
       </div>
     </div>
   );

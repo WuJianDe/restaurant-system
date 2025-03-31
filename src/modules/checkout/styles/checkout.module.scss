@@ -1,0 +1,90 @@
+.checkout-page {
+  margin-top: 60px;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.buyerInfo,
+.orderDetails {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.buyerInfo h2,
+.orderDetails h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.orderDetails table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orderDetails th,
+.orderDetails td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.orderDetails th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    height: 40px;
+  }
+
+}
+
+.table {
+  margin: 0 0 20px 0;
+}
+
+.submit-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #115e3a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #115e3ac8;
+}
